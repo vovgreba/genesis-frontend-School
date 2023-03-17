@@ -1,0 +1,38 @@
+
+.lesson-image {
+  max-width: 650px;
+  margin-bottom: 10px;
+}
+.lesson-order {
+  margin-top: 10px;
+}
+.lesson-title {
+  margin-bottom: 20px;
+}
+.videoPlay {
+  max-width: 900px;
+  position: relative;
+  cursor: pointer;
+}
+.video {
+  max-width: 900px;
+  position: relative;
+}
+.Picture-in-Picture {
+  border: 1px solid #000;
+  border-radius: 2px;
+}
+.PictureInPicture {
+  position: absolute;
+  bottom: 40px;
+  right: 165px;
+  color: #fff;
+  cursor: pointer;
+  
+  &:hover {
+    box-sizing: content-box;
+    border: 2px solid red;
+    border-radius: 50%;
+    
+  }
+}

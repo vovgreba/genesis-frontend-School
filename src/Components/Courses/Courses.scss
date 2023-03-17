@@ -1,0 +1,62 @@
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.courses {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.card-course {
+  max-width: 500px;
+  padding: 30px 30px 20px 30px;
+  background-color: #fff;
+  margin-bottom: 20px;
+  .card-title {
+    font-size: 22px;
+    margin-bottom: 5px;
+  }
+  .desc {
+    max-width: 450px;
+    margin-bottom: 10px;
+  }
+  .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .classes {
+      display: flex;
+      align-items: center;
+      .icon-course {
+        margin-right: 10px;
+      }
+    }
+    .rating {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 20px;
+      .value {
+        color: #05030D;
+        opacity: 0.5;
+      }
+    }
+  }
+  .list-skills {
+    h4 {
+      margin-bottom: 10px;
+    }
+    li {
+      margin-left: 16px;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.preloader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: transparent;
+  height: 100vh;
+}
