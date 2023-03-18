@@ -6,14 +6,14 @@ const getToken = async() => {
     const {data} = await axios.get(`https://api.wisey.app/api/v1/auth/anonymous?platform=subscriptions`)
     return data.token
   } catch(error) {
-    return error
+    throw new Error(error.message);
   }
 }
 // Отримання даних з API
 export const requestData = async () => {
   const token = await getToken();
   try {
-    const { data } = await axios.get(`https://api.wisey.app/api/v1/core/preview-courses`, {
+    const { data } = await axios.get(`https://api.wisey.app/api/v1/core/preview-courses555`, {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`
@@ -21,7 +21,7 @@ export const requestData = async () => {
     })
     return data;
   } catch (error) {
-    return error
+    throw new Error(error.message);
   }
 };
 // Отримання даних з API конкретного курса.
@@ -38,6 +38,6 @@ export const requestDataCourse = async (id) => {
     })
     return data;
   } catch (error) {
-    return error
+    throw new Error(error.message);
   }
 };

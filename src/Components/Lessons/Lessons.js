@@ -1,24 +1,35 @@
 import {React, useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
 import { requestDataCourse } from '../../Api/Api'
-
+import{ ReactComponent as Preloader } from '../../Preloder/loading.svg'
 
 import VideoPlayer from '../Video/VideoPlayer';
 import './Lesson.scss'
 function Lesson() {
   const[course, setCourse] = useState([])
+  const [loading, setLoading] = useState(false)
   const { id } = useParams();
-  // console.log(id)
+  
   useEffect(() => {
 
     const getDataCourse = async() => {
+      setLoading(true)
       const data = await requestDataCourse(id)
       setCourse(data)
-      
+      setLoading(false)
     }
     getDataCourse()
   }, [id])
   const { lessons } = course
+
+  if(loading) {
+    return(
+      <div className='preloader'>
+        <Preloader />
+      </div>
+    )
+  }
+
   return (
     <div className='lesson container'>
       <h1 className='title'>Course {course.title}</h1>
@@ -34,7 +45,7 @@ function Lesson() {
 
                 <div>
                   {
-                    lesson.link ? <VideoPlayer videoSrc={lesson?.link}/> : 'Not a video link'
+                    lesson.link ? <VideoPlayer videoSrc={lesson?.link} id={lesson?.id}/> : 'Not a video link'
                   }
                 </div>
 

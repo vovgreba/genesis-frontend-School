@@ -23,16 +23,10 @@
   border-radius: 2px;
 }
 .PictureInPicture {
-  position: absolute;
-  bottom: 40px;
-  right: 165px;
-  color: #fff;
+  vertical-align: sub;
+  margin-left: 10px;
   cursor: pointer;
-  
-  &:hover {
-    box-sizing: content-box;
-    border: 2px solid red;
-    border-radius: 50%;
-    
+  path {
+    fill:#000
   }
 }

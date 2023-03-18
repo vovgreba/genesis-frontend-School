@@ -11,7 +11,8 @@ import { Rating} from '@mui/material';
 function Courses() {
 
   const [courses, setCourses] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [amountCoursesPerPage] = useState(10);
   const location = useLocation();
@@ -23,10 +24,15 @@ function Courses() {
       navigate(`?page=${currentPage}`);
     }
     const getData = async () => {
-      setLoading(true)
-      const responseData = await requestData();
-      setCourses(responseData);
-      setLoading(false)
+      try{
+        const responseData = await requestData();
+        setCourses(responseData);
+        setLoading(false)
+      }catch(error) {
+        setLoading(false)
+        setError(error)
+      }
+
     };
     getData();
   }, [currentPage, navigate, page]);
@@ -60,6 +66,9 @@ function Courses() {
       </div>
     )
   } 
+  if(error) {
+    return <div>Error: {error.message}</div>;
+  }
   
   return (
 
