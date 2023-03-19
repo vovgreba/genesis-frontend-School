@@ -116,7 +116,7 @@ function Courses() {
           })}
         </div>
 
-      <Pagination 
+      <Pagination  className='pagination'
         amountCoursesPerPage={amountCoursesPerPage} 
         lastPages={lastPages}
         onChange={handlePageChange}

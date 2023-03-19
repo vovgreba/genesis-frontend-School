@@ -1,13 +1,18 @@
-
 .preview-video {
-  text-align: center;
-  width: 450px;
   object-fit: fill;
-  cursor: pointer;
 }
-.preview-image {
+.preview-image, .preview-video {
   text-align: center;
   width: 450px;
   margin-bottom: 10px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 1050px) {
+  .preview-video, .preview-image{
+    width: 100%;
+    max-width: 300px;
+
+  }
+
 }

@@ -13,7 +13,7 @@ const getToken = async() => {
 export const requestData = async () => {
   const token = await getToken();
   try {
-    const { data } = await axios.get(`https://api.wisey.app/api/v1/core/preview-courses555`, {
+    const { data } = await axios.get(`https://api.wisey.app/api/v1/core/preview-courses`, {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`

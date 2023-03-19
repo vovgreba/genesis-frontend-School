@@ -6,6 +6,7 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+
 }
 .card-course {
   max-width: 500px;
@@ -59,4 +60,21 @@
   justify-content: center;
   background-color: transparent;
   height: 100vh;
+}
+
+.MuiPagination-root {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+@media screen and (max-width: 1050px) {
+  .courses {
+    justify-content: center;
+    gap: 20px;
+  }
+  .card-course {
+    max-width: 350px;
+    margin-bottom: 0;
+  }
 }

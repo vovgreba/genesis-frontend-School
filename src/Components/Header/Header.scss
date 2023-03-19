@@ -1,0 +1,14 @@
+.MuiToolbar-root {
+  display: flex;
+  justify-content: space-between;
+  a {
+    color: #fff;
+    text-decoration: none;
+    padding: 6px 8px;
+    transition: all 0.2s linear;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.04);
+      border-radius: 2px;
+    }
+  }
+}
